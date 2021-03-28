@@ -7,14 +7,15 @@ TEXT
 
 while true
   print "プランの番号を選択 > "
-  case plan_select = gets.to_i
+  plan_num = gets.to_i
+  case plan_num
   when 1, 2, 3
     break
   end
   puts "1〜3の番号を入力して下さい。"
 end
 
-case plan_select
+case plan_num
 when 1
   plan_name = "沖縄旅行"
   plan_price = 10000
@@ -31,9 +32,7 @@ while true
   puts "何名で予約されますか？"
   print "人数を入力 > "
   people_num = gets.to_i
-  if 1 <= people_num
-    break
-  end
+  break if 1 <= people_num
   puts "1以上を入力して下さい。"
 end
 
